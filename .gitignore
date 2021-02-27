@@ -1,0 +1,4 @@
+
+lib/*.ts
+lib/*.js
+lib/*.map
