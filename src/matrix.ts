@@ -2,7 +2,7 @@ export class Matrix {
   private rowDimension: number = 0 // 行维度
   private colDimension: number = 0 // 列维度
 
-  private elements: number[] = []
+  protected elements: number[] = []
 
   constructor (row: number = 3, col: number = 3) {
     const out = this._initlize(row, col)
@@ -92,10 +92,9 @@ export class Matrix {
   }
   // 矩阵乘法
   multipliy (matrix: Matrix) {
-    const out = this.clone()
     const outArr = []
     // 遍历行
-    out.forEachByRow((row) => {
+    this.forEachByRow((row) => {
       matrix.forEachByCol(col => {
         const len = row.length
         let value = 0
@@ -105,7 +104,7 @@ export class Matrix {
         outArr.push(value)
       })
     })
-    out.set(outArr)
-    return out
+    this.set(outArr)
+    return this
   }
 }

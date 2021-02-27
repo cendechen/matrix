@@ -1,4 +1,4 @@
-import { translateMatrix, scaleMatrix, rotateMatrix, Vector } from '../src'
+import { translateMatrix, scaleMatrix, rotateMatrix, Vector, MatrixCss } from '../src'
 
 const out = scaleMatrix(2)
 out.display()
@@ -20,3 +20,7 @@ var nv = v.dot(tout)
 
 v.display()
 nv.display()
+
+const mc = new MatrixCss()
+
+console.log(mc.scaleY(4).rotateX(45).css())

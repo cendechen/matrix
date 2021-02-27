@@ -1,6 +1,5 @@
 
-const { cos:_cos, sin: _sin} = Math
-
+const { cos:_cos, sin: _sin, tan: _tan} = Math
 // 角度转换为弧度
 export const deg2rad = (deg: number) => {
   return deg / 180 * Math.PI
@@ -22,4 +21,8 @@ export const cos = (deg: number) => {
     return 0
   }
   return _cos(deg2rad(deg))
+}
+
+export const tan = (deg: number) => {
+  return _tan(deg2rad(deg))
 }
